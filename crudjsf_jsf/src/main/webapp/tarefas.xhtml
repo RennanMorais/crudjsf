@@ -14,6 +14,12 @@
 	
 	<h1>Lista de tarefas</h1>
 	
+	<h:form id="tarefas-form">
+		<h:outputLabel value="Digite uma tarefa"></h:outputLabel><br/>
+		<h:inputText id="tarefa" value="#{tarefaBean.tarefa.tarefa}"/>
+		<h:commandButton value="Adicionar" action="#{tarefaBean.salvar()}" /><br/><br/>
+	</h:form>
+	
 	<h:dataTable value="#{tarefaBean.getTarefas()}" var="t">
 		<h:column>
 			<f:facet name="header">
@@ -28,6 +34,7 @@
 			<h:outputText value="#{t.tarefa}"></h:outputText>
 		</h:column>
 	</h:dataTable>
+	
 </h:body>
 
 </html>
